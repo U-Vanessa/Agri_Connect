@@ -18,12 +18,12 @@
           <li>
             <a href="/AgriConnect/Pages/Home page/home.html">
               <img class="icon" src="/AgriConnect/Images/Logo 7(4).png" alt="Logo" />
-              <span class="topup">Agri-Connect</span>
+              <span class="topup">AGRI-CONNECT</span>
             </a>
           </li>
 
           <li>
-            <a href="admin_dashboard.html">
+            <a href="/AgriConnect/Pages/Dash/Farmer/farm.html">
               <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
@@ -59,7 +59,16 @@
           </li>
 
           <li>
-            <a href="logout.html" class="logout">
+            <a href="/AgriConnect/Pages/Settings/set.html">
+              <span class="icon">
+                <ion-icon name="settings-outline"></ion-icon>
+              </span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/AgriConnect/Login/SignIn/signin.html" class="logout">
               <span class="icon">
                 <ion-icon name="log-out-outline"></ion-icon>
               </span>
@@ -94,7 +103,7 @@
             <div>
               <div class="sign">+</div>
               <div class="counter">230</div>
-              <div class="cardName">Daily Earnings</div>
+              <div class="cardName">Daily Commands</div>
             </div>
             <div class="iconBx">
               <ion-icon name="wallet-outline"></ion-icon>
@@ -111,20 +120,25 @@
             <table>
               <thead>
                 <tr>
+                  <th>Date</th>
                   <th>Client name</th>
                   <th>Service</th>
-                  <th>Price</th>
-                  <th>Email</th>
+                  <th>Command</th>
+                  <th>Amount</th>
+                  <th>Location</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>01/09/2024</td>
                   <td>John Doe</td>
-                  <td>Service A</td>
-                  <td>$100</td>
-                  <td>johndoe@example.com</td>
+                  <td>Crop Tracking</td>
+                  <td>Sweet Potatoes</td>
+                  <td>200KG</td>
+                  <td>KN 759</td>
+                  </td>
                   <td class="status">Pending</td>
                   <td>
                     <select class="status-select" onchange="updateStatus(this)">
@@ -136,10 +150,30 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>02/09/2024</td>
+                  <td>Vanz Rev</td>
+                  <td>Climate Support</td>
+                  <td>Rainfall</td>
+                  <td>Sessions</td>
+                  <td>BR 20</td>
+                  </td>
+                  <td class="status">Declined</td>
+                  <td>
+                    <select class="status-select" onchange="updateStatus(this)">
+                      <option value="No option">Choose status</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Declined">Declined</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>03/09/2024</td>
                   <td>Jane Smith</td>
-                  <td>Service B</td>
-                  <td>$150</td>
-                  <td>janesmith@example.com</td>
+                  <td>Direct Marketplace</td>
+                  <td>Order Tracking</td>
+                  <td>1T</td>
+                  <td>KG 36</td>
                   <td class="status">Completed</td>
                   <td>
                     <select class="status-select" onchange="updateStatus(this)">

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/AgriConnect/Images/Logo 7(4).png" type="image/jpg" />
-    <title>Agri-Connect |Customer | User Dashboard</title>
+    <link rel="stylesheet" href="cust.css">
+    <title>Agri-Connect | User Dashboard</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="/AgriConnect/Pages/Dash/Customer/cust.css" />
   </head>
@@ -20,32 +20,55 @@
       <div class="navigation">
         <ul>
           <li>
-            <a href="index.html">
+            <a href="/AgriConnect/Pages/Home page/home.html">
               <img class="icon" src="/AgriConnect/Images/Logo 7(4).png" alt="Logo" />
-              <span class="topup">Agri-Connect</span>
+              <span class="topup">AGRI-CONNECT</span>
             </a>
           </li>
 
-          <li>
-            <a href="user_dash.html">
+          <li class="dashboard">
+            <a href="/AgriConnect/Pages/Home page/home.html">
               <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
               <span class="title">Dashboard</span>
             </a>
+            <ol class="dashboard-list">
+                <li class="dashboard-item">Crop Tracking</li>
+                <li class="dashboard-item">Direct Market</li>
+                <li class="dashboard-item">Climate Support</li>
+              </ol>
+  
+              <script>
+                document.querySelector('.dashboard').addEventListener('mouseover', function() {
+                  document.querySelector('.dashboard-list').style.display = 'block';
+                });
+  
+                document.querySelector('.dashboard').addEventListener('mouseout', function() {
+                  document.querySelector('.dashboard-list').style.display = 'none';
+                });
+              </script>
           </li>
 
           <li>
-            <a href="settings.html">
+            <a href="report.html">
               <span class="icon">
-                <ion-icon name="cog-outline"></ion-icon>
+                <ion-icon name="reader-outline"></ion-icon>
+              </span>
+              <span class="title">Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/AgriConnect/Pages/Settings/set.html">
+              <span class="icon">
+                <ion-icon name="settings-outline"></ion-icon> 
               </span>
               <span class="title">Settings</span>
             </a>
           </li>
 
           <li>
-            <a href="logout.html" class="logout">
+            <a href="/AgriConnect/Pages/Home page/home.html" class="logout">
               <span class="icon">
                 <ion-icon name="log-out-outline"></ion-icon>
               </span>
@@ -67,8 +90,8 @@
           <div class="card">
             <div>
               <div class="sign">+</div>
-              <div class="counter">0</div>
-              <div class="cardName">Declined Services</div>
+              <div class="counter" data-target="10">10</div>
+              <div class="cardName">Incompleted Services</div>
             </div>
             <div class="iconBx">
               <ion-icon name="close-circle-outline"></ion-icon>
@@ -77,7 +100,7 @@
           <div class="card">
             <div>
               <div class="sign">+</div>
-              <div class="counter">0</div>
+              <div class="counter" data-target="20">20</div>
               <div class="cardName">Completed Services</div>
             </div>
             <div class="iconBx">
@@ -95,30 +118,39 @@
             <table class="report" id="orderTable">
               <thead>
                 <tr>
-                  <td>ID</td>
-                  <td>Name</td>
-                  <td>Date</td>
-                  <td>Price/Month</td>
+                  <td>Date</td>    <!-- Date of the order (Day, Month, Year) -->
+                  <td>Command</td>
+                  <td>Location</td>
+                  <td>Deadline</td>
                   <td>Status</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="ID">1</td>
-                  <td data-label="Name">Service A</td>
-                  <td data-label="Date">2024-10-01</td>
-                  <td data-label="Price">$50</td>
+                  <td data-label="Date">1/October/2024</td>
+                  <td data-label="Command">Crop Tracking</td>
+                  <td data-label="Location">KN 284 ST</td>
+                  <td data-label="Deadline">3/October/2024</td>
                   <td data-label="Status">
                     <span>Completed</span>
                   </td>
                 </tr>
                 <tr>
-                  <td data-label="ID">2</td>
-                  <td data-label="Name">Service B</td>
-                  <td data-label="Date">2024-10-15</td>
-                  <td data-label="Price">$75</td>
+                  <td data-label="Date">5/October/2024</td>
+                  <td data-label="Command">Direct Marketplace</td>
+                  <td data-label="Location">KG 780</td>
+                  <td data-label="Deadline">8/October/2024</td>
                   <td data-label="Status">
                     <span>Pending</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">6/October/2024</td>
+                  <td data-label="Command">Climate Support</td>
+                  <td data-label="Location">KG 780</td>
+                  <td data-label="Deadline">10/October/2024</td>
+                  <td data-label="Status">
+                    <span>Incomplete</span>
                   </td>
                 </tr>
               </tbody>
