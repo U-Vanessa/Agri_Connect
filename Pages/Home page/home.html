@@ -42,7 +42,23 @@
               <li><a class="nav-link scrollto" href="#about">ABOUT</a></li>
               <li><a class="nav-link scrollto" href="#service">SERVICES</a></li>
               <li><a class="nav-link scrollto" href="#contactus">CONTACT US</a></li>
-              <button><a href="/AgriConnect/Login/SignIn/signin.html">LOGIN</a></li></button>
+              <button class="btn" style="
+                                           background-color: #6085406b; 
+                                           color: #FFFFFF; 
+                                           padding: 12px 30px; 
+                                           font-size: 16px; 
+                                           font-weight: bold; 
+                                           border: none; 
+                                           border-radius: 25px; 
+                                           cursor: pointer; 
+                                           transition: all 0.3s ease; 
+                                           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                               " 
+              onmouseover="this.style.backgroundColor='#4a6b34'; this.style.boxShadow='0 6px 8px rgba(0, 0, 0, 0.15)'; this.style.transform='translateY(-2px)';" 
+              onmouseout="this.style.backgroundColor='#608540'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'; this.style.transform='translateY(0)';" 
+              onmousedown="this.style.backgroundColor='#3f5a2a'; this.style.boxShadow='0 3px 5px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(1px)';" 
+              onmouseup="this.style.backgroundColor='#4a6b34'; this.style.boxShadow='0 6px 8px rgba(0, 0, 0, 0.15)'; this.style.transform='translateY(-2px)';">
+              <a href="/AgriConnect/Login/SignIn/signin.html">LOGIN</a></li></button>
           </li>
         </div>
         </ul>
@@ -53,40 +69,52 @@
    <!-- Hero Section -->
     <section id="hero" class="hero d-flex align-items-center">
       <section class="hero">
+        <img src="https://media.istockphoto.com/id/1495390170/photo/unrecognizable-male-farmer-touching-his-wheat-crop.jpg?s=612x612&w=0&k=20&c=Jx4ysPbpe0N2Wdb_pBEDLk7GffP20ZujBr39oqbzHNI=" alt="">
         <h2>EMPOWER, CONNECT, SUSTAIN</h2>
         <a href="#hero" class="btn">Explore Our Services</a>
         <a href="#hero" class="btn">More About Us</a>
     </section>
 
-    <section  id="#service" class="services">
+    <section id="service" class="services">
       <h2>OUR SERVICES</h2>
-      <div id="#services" class="service-list">
-          <div class="service">
-            <img src="/AgriConnect/Images/Crops.jpg" alt="">
-            <div class="description">
-              <h3>CROPS</h3>
-              <p> Our mobile application strengthens farmer-customer bonds by promoting visibility into sustainable farming practices. This approach not only enhances customer trust but also enables farmers to diversify their crops and adopt eco-friendly practices, ultimately fostering a sustainable agricultural ecosystem that supports environmental resilience and job growth. </p>
+      <div class="service-slider">
+          <div id="services" class="service-list">
+              <div class="service">
+                  <img src="/AgriConnect/Images/Crops.jpg" alt="">
+                  <div class="description">
+                      <h3>CROPS</h3>
+                      <p>Our mobile application strengthens farmer-customer bonds...</p>
+                      <button><a href="/AgriConnect/Login/SignIn/signin.html">Book now</a></button>
+                  </div>
+              </div>
+              <div class="service">
+                  <img src="/AgriConnect/Images/climattte.webp" alt="">
+                  <div class="description">
+                      <h3>CLIMATE CHANGE TIPS</h3>
+                      <p>We envision an interconnected ecosystem that promotes climate-resilient agriculture...</p>
+                      <button><a href="/AgriConnect/Login/SignIn/signin.html">Book now</a></button>
+                  </div>
+              </div>
+              <div class="service">
+                  <img src="/AgriConnect/Images/Farmers.webp" alt="">
+                  <div class="description">
+                      <h3>FARMING</h3>
+                      <p>Our mission is to empower farmers by developing an intuitive mobile app...</p>
+                      <button><a href="/AgriConnect/Login/SignIn/signin.html">Book now</a></button>
+                  </div>
+              </div>
           </div>
-        </div>
-
-      <div class="service">
-        <img src="/AgriConnect/Images/climattte.webp" alt="">
-        <div class="description">
-          <h3>CLIMATE CHANGE</h3>
-          <p>We envision an interconnected ecosystem that promotes climate-resilient agriculture. Through crop diversification and innovative farming techniques, our platform empowers farmers to adapt to climate change. By facilitating job creation and supporting sustainable farming, we aim to build a future-proof, resilient food system that benefits communities and the environment.</p>
-        </div>
       </div>
-
-      <div class="service">
-        <img src="/AgriConnect/Images/Farmers.webp" alt="">
-        <div class="description">
-          <h3>FARMING</h3>
-          <p>Our mission is to empower farmers by developing an intuitive mobile app that bridges the gap between farmers and customers. This platform will provide real-time tracking of farming practices, fostering transparency and encouraging sustainable agricultural relationships that help farmers tackle climate challenges, diversify crops, and secure sustainable livelihoods.</p>
-        </div>
+      <!-- Navigation buttons -->
+      <div class="slider-buttons">
+        <button class="slider-button" data-index="0" onclick="moveSlide(0)"></button>
+        <button class="slider-button" data-index="1" onclick="moveSlide(1)"></button>
+        <button class="slider-button" data-index="2" onclick="moveSlide(2)"></button>
       </div>
   </section>
+  
 
-  <section class="blog">
+  <section class="blog" id="about">
     <h2>ABOUT US</h2>
     <div class="blog-list">
         <div class="blog-post">
@@ -101,7 +129,7 @@
 </section>
 
 
-<div id="contact" class="paddsection">
+<div id="contactus" class="paddsection">
   <div class="container contact-container">
     <!-- Get in Touch Column -->
     <div class="contact-section">
@@ -115,7 +143,7 @@
     </div>
 
     <!-- Location Column -->
-    <div class="location-section">
+    <div class="location-section" id="contactus">
       <h2 class="mb-30 text-center">LOCATION</h2>
       <div class="map">
         <iframe 

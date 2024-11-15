@@ -24,6 +24,7 @@
   --warning: #d6a617;
   --danger: #dc3545;
   --info: #17a2b8;
+  --green: #2e6238ac;
 }
 
 body {
@@ -41,7 +42,7 @@ body {
   position: fixed;
   width: 270px;
   height: 100%;
-  background: var(--black2);
+  background: var(--green);
   border-left: 10px solid var(--blue);
   transition: 0.5s;
   overflow: hidden;

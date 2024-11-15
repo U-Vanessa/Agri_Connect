@@ -24,6 +24,7 @@
   --warning: #d6a617;
   --danger: #dc3545;
   --info: #17a2b8;
+  --green: #2e6238ac;
 }
 
 body {
@@ -43,7 +44,7 @@ body {
   position: fixed;
   width: 260px;
   height: 100%;
-  background: var(--black2);
+  background: var(--green);
   border-left: 10px solid var(--blue);
   transition: 0.5s;
   overflow: hidden;
@@ -132,7 +133,7 @@ h6 input[type='date'] {
 
 h6 .button[type='submit'] {
   padding: 6px 12px;
-  background-color: #078a0e;
+  background-color: #264d2dca;
   color: white;
   border: none;
   border-radius: 7px;
