@@ -32,6 +32,12 @@ def create_app():
         password = db.Column(db.String(200), nullable=False)  # Store hashed passwords
         role = db.Column(db.String(50), nullable=False)  # Role can be 'cust', 'farm', 'supp'
 
+    @app.route('/')
+    @app.route('/home')
+    def home():
+        return render_template('home.html')
+    
+     
     # Function to create example users
     @app.route('/create-example-users')
     def create_example_users():
@@ -53,9 +59,7 @@ def create_app():
         return "Example users created!"
 
     # Home page route
-    @app.route('/')
-    def home():
-        return render_template('home.html')
+    
     
     # Sign-in route
     @app.route('/signin', methods=['GET', 'POST'])
