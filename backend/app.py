@@ -16,7 +16,7 @@ def create_app():
     app = Flask(__name__, static_folder=STATIC_DIR, template_folder=TEMPLATE_DIR)
     
     # Secret key for sessions
-    app.secret_key = 'your_secret_key'  # Update with a strong key
+    app.secret_key = os.urandom(24)  # Generate a strong random key
 
     # Set the database URI
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(BASE_DIR, 'site.db')
@@ -78,10 +78,9 @@ def create_app():
                 else:
                     return redirect(url_for('cust_dashboard'))
             else:
-                return "Invalid credentials, please try again.", 401
+                # Render error message on sign-in page
+                return render_template('signin.html', error="Invalid credentials, please try again.")
             
-            
-
         return render_template('signin.html')
 
     # Role-based dashboards
@@ -109,6 +108,19 @@ def create_app():
         session.clear()  # Clear the session
         return redirect(url_for('home'))
 
+    # Error handlers for better debugging
+    @app.errorhandler(403)
+    def forbidden(error):
+        return "403 Forbidden: You do not have permission to access this resource.", 403
+
+    @app.errorhandler(404)
+    def page_not_found(error):
+        return "404 Not Found: The page you are looking for does not exist.", 404
+
+    @app.errorhandler(500)
+    def internal_server_error(error):
+        return "500 Internal Server Error: Something went wrong on our end.", 500
+
     # Initialize the database and tables
     with app.app_context():
         db.create_all()  # Create tables if they don't exist
@@ -118,4 +130,4 @@ def create_app():
 # If running this script directly, create app instance and run the server
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True, port=8080)
+    app.run(debug=True, host='0.0.0.0', port=8080)
